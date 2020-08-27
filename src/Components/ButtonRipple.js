@@ -25,7 +25,7 @@ const ButtonRipple = ({ children }) => {
 
     return (
         <button className="ripple" onClick={createCircle}>
-            {children}
+            <span class="children">{children}</span>
         </button>
     );
 };

@@ -23,6 +23,12 @@ body {
     overflow: hidden;
 }
 
+.ripple .children {
+    pointer-events: none;
+    position: relative;
+    z-index: 1;
+}
+
 .ripple:hover {
     background-color: #7e329e;
 }
@@ -41,6 +47,8 @@ body {
     transform: translate(-50%, -50%) scale(1);
 
     animation: grow 0.5s linear forwards;
+
+    z-index: 0;
 }
 
 @keyframes grow {
