@@ -1,13 +1,115 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Carousel Styling */
+.carousel {
+    overflow: hidden;
+    width: var(--image-size);
+}
+
+.images-container {
+    position: relative;
+    height: var(--image-size);
+
+    transition: transform 0.3s ease-in-out;
+}
+
+.images-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.controls {
+    background: #8e44ad;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.controls p {
+    margin: 0;
+}
+
+.controls button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.controls button:disabled {
+    opacity: 0.4;
+}
+
+/* Accordion Styling */
+.accordion {
+    background-color: #8e44ad;
+    border-radius: 3px;
+    color: white;
+    padding: 1.5rem;
+}
+
+.accordion-item {
+    background-color: #9b59b6;
+    transition: margin 0.2s linear;
+}
+
+.accordion-item:not(:last-of-type) {
+    border-bottom: 1px solid #8e44ad;
+}
+
+.accordion-item.open {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.accordion-item.open:not(:first-of-type) {
+    margin-top: 0.5rem;
+}
+
+.accordion-item.open:not(:last-of-type) {
+    margin-bottom: 0.5rem;
+}
+
+.accordion-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 1rem;
+}
+
+.accordion-body {
+    margin: 0 1rem;
+    height: 0;
+    transition: all 0.2s linear;
+    overflow: hidden;
+}
+
+.accordion-item.open .accordion-body {
+    padding: 1rem 0;
+    height: auto;
+}
+
+.fa-caret-down {
+    transition: transform 0.2s linear;
+}
+
+.accordion-item.open .fa-caret-down {
+    transform: rotate(180deg);
 }
