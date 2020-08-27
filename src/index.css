@@ -8,6 +8,48 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+/* Button Ripple */
+.ripple {
+    background-color: #8e44ad;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple:hover {
+    background-color: #7e329e;
+}
+
+.ripple:focus {
+    outline: none;
+}
+
+.ripple .circle {
+    background-color: #54176e;
+    border-radius: 50%;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(1);
+
+    animation: grow 0.5s linear forwards;
+}
+
+@keyframes grow {
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(3);
+    }
+}
+
 /* Carousel Styling */
 .carousel {
     overflow: hidden;
