@@ -46,7 +46,7 @@ body {
     pointer-events: none;
     transform: translate(-50%, -50%) scale(1);
 
-    animation: grow 0.5s linear forwards;
+    animation: grow 0.3s linear forwards;
 
     z-index: 0;
 }
@@ -54,7 +54,7 @@ body {
 @keyframes grow {
     to {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(3);
+        transform: translate(-50%, -50%) scale(4);
     }
 }
 
